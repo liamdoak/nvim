@@ -4,14 +4,22 @@ get_package("ellisonleao/gruvbox.nvim")
 get_package("nvim-lua/plenary.nvim")
 get_package("nvim-treesitter/nvim-treesitter")
 get_package("nvim-telescope/telescope.nvim")
+require('telescope').setup {
+    defaults = {
+        layout_config = {
+            preview_cutoff = 10
+        }
+    }
+}
 local telescope_builtin = require('telescope.builtin')
+get_package("tikhomirov/vim-glsl")
 
 -- tab configuration
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
-vim.opt.smarttab = false
+vim.opt.smarttab = true
 
 -- keybindings
 vim.g.mapleader = ' '
@@ -32,3 +40,6 @@ vim.cmd("set clipboard+=unnamedplus")
 
 -- colorscheme
 vim.cmd("colorscheme gruvbox")
+
+-- C/C++ indentation
+vim.opt.cinoptions = "N-s,+0,g0,(1s"
