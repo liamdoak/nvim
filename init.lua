@@ -21,6 +21,9 @@ vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.smarttab = true
 
+-- vertical bar at column 81
+vim.opt.colorcolumn="81"
+
 -- keybindings
 vim.g.mapleader = ' '
 vim.keymap.set("n", "<leader>s", ":vsplit<Enter>", {})
